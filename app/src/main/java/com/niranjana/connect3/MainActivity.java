@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     int[] connect = {2,2,2};
     boolean connected = false;
     int xCount=0,oCount=0;
+   public TextView turnView = (TextView)findViewById(R.id.turnTextView);
     public boolean isConnectedHorizontally()
     {
         int i=0;
@@ -124,9 +125,11 @@ public class MainActivity extends AppCompatActivity {
                 if (activePlayer == 0) {
                     counter.setImageResource(R.drawable.x_tic);
                     activePlayer = 1;
+                    turnView.setText("Turn 'O'");
                 } else if (activePlayer == 1) {
                     counter.setImageResource(R.drawable.o_tic);
                     activePlayer = 0;
+                    turnView.setText("Turn 'X'");
                 }
                 counter.animate().translationYBy(1000f).rotation(360).setDuration(300);
                 finishedGame = connectCheck();
@@ -187,5 +190,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 }
