@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     int[] connect = {2,2,2};
     boolean connected = false;
     int xCount=0,oCount=0;
-   public TextView turnView = (TextView)findViewById(R.id.turnTextView);
+
     public boolean isConnectedHorizontally()
     {
         int i=0;
@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
     {
 
         ImageView counter = (ImageView) view;
+        TextView turnView = (TextView)findViewById(R.id.turnTextView);
         int tapped = Integer.parseInt(counter.getTag().toString());
         boolean finishedGame = false;
         System.out.println("Tag: "+counter.getTag().toString());
@@ -125,11 +126,11 @@ public class MainActivity extends AppCompatActivity {
                 if (activePlayer == 0) {
                     counter.setImageResource(R.drawable.x_tic);
                     activePlayer = 1;
-                    turnView.setText("Turn 'O'");
+                   turnView.setText("Turn 'O'");
                 } else if (activePlayer == 1) {
                     counter.setImageResource(R.drawable.o_tic);
                     activePlayer = 0;
-                    turnView.setText("Turn 'X'");
+                   turnView.setText("Turn 'X'");
                 }
                 counter.animate().translationYBy(1000f).rotation(360).setDuration(300);
                 finishedGame = connectCheck();
@@ -168,6 +169,8 @@ public class MainActivity extends AppCompatActivity {
     {
         LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
         layout.setVisibility(View.INVISIBLE);
+        TextView turnView = (TextView)findViewById(R.id.turnTextView);
+        turnView.setText("Turn 'X'");
         activePlayer = 0;
         winner = 2;
         for(int i=0;i<9;i++) {

@@ -209,7 +209,7 @@
             android:layout_alignStart="@+id/scoresTextView"
             android:layout_below="@+id/scoresTextView"
             android:layout_marginTop="14dp"
-            android:text="Turn  "
+            android:text="Turn  'X'"
             android:textColor="@android:color/holo_red_dark" />
 
     </RelativeLayout>
