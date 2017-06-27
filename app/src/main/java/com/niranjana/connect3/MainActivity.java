@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
             for(int i=0;i<9;i++)
             {
-                if(gameState[i]!=2)
+                if(gameState[i] != 2 && winner == 2)
                     drawFlag = true;
             }
         }
@@ -173,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
             layout.setVisibility(View.VISIBLE);
             winnerMessage.setText("Draw!");
+            drawFlag = false;
         }
         for(int i=0;i<9;i++) {
             System.out.println(gameState[i]+"  ");
