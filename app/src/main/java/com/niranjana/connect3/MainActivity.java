@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     int[] connect = {2,2,2};
     boolean connected = false;
     int xCount=0,oCount=0;
+    boolean drawFlag = false;
 
     public boolean isConnectedHorizontally()
     {
@@ -158,6 +159,20 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
+        }else{
+
+            for(int i=0;i<9;i++)
+            {
+                if(gameState[i]!=2)
+                    drawFlag = true;
+            }
+        }
+        if(drawFlag)
+        {
+            TextView winnerMessage = (TextView) findViewById(R.id.winnerTextView);
+            LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
+            layout.setVisibility(View.VISIBLE);
+            winnerMessage.setText("Draw!");
         }
         for(int i=0;i<9;i++) {
             System.out.println(gameState[i]+"  ");
