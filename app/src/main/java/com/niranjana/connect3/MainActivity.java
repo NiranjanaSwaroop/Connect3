@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                     drawFlag = true;
                 }else{
                     drawFlag = false;
-                    break ;
+                    break;
                 }
             }
         }
