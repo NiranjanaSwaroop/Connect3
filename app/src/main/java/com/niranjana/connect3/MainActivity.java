@@ -162,13 +162,13 @@ public class MainActivity extends AppCompatActivity {
         }else{
 
 
+            for(int i=0;i<9;i++)
             {
-                int i = 0;
-                while(gameState[i] != 2 && winner == 2) {
-                    i++;
-                }
-                if(i == 9){
+                if(gameState[i]!=2 && winner == 2) {
                     drawFlag = true;
+                }else{
+                    drawFlag = false;
+                    break ;
                 }
             }
         }
